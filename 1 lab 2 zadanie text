@@ -1,0 +1,22 @@
+import Foundation
+
+func calculateTotalRent(zhitely: Int) -> Int
+{
+    var rentPerPerson: Int = 0
+    if zhitely <= 5 //если количество жителей 5 для каждого аренда будет стоить 1000
+    {
+        rentPerPerson = 1000
+    }
+    else if zhitely > 5 && zhitely < 7 //если  жителей между 5 и 7 для каждого аренда = 800
+    {
+        rentPerPerson = 800
+    }
+    else if zhitely > 7 //если  жителей больше 7 для каждого аренда = 800
+    {
+        rentPerPerson = 500
+    }
+    return rentPerPerson * zhitely
+}
+let totalRent = calculateTotalRent (zhitely: 6)
+print("Общая сумма аренды составила = \(totalRent) рублей")
+
