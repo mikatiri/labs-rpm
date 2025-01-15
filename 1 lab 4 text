@@ -1,0 +1,13 @@
+import Foundation
+
+let constants: [String] = ["1", "2" , "3", "a", "b"]
+var sum: String = ""
+
+for constant in constants {
+    if let number = Int(constant) { //если константа - это число, она складывается с остальными константами числами
+        sum = String((Int(sum) ?? 0) + number)}
+    else {
+        sum += "+" + constant //если это буква она просто добавляется с +
+    }
+}
+print( "Сумма переменных = \(sum)")
