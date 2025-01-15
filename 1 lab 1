@@ -1,0 +1,15 @@
+import Foundation
+
+var kolvo_zhit = 10
+var forOnePerson: Int = 0
+if kolvo_zhit < 5{
+forOnePerson = 1000
+}
+else if kolvo_zhit > 5 && kolvo_zhit < 7{
+forOnePerson = 800
+}
+else if kolvo_zhit > 7{
+forOnePerson = 500
+}
+let total = forOnePerson * kolvo_zhit
+print("Аренда составит - \(total) рублей")
