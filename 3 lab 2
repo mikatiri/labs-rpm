@@ -1,0 +1,103 @@
+import SwiftUI
+
+struct ContentView: View {
+    
+    @State private var login = "" //хранит данные из логина и пароля
+    @State private var password = ""
+    
+    var body: some View {
+        VStack {
+            // Иконка полиции
+            Image("police icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .padding(.top, 60)
+                .padding(.top, 20)
+
+            
+            //"WSK Police"
+            Text("WSK Police")
+                .font(.system(size: 50))
+                .padding(.top, 20)
+            
+            // Поле ввода логина
+            VStack {
+                HStack {
+                    Image(systemName: "person.fill") //иконка
+                        .foregroundColor(.black)
+                        .padding(.leading)
+                    
+                    TextField("Username", text: $login) //ввод
+                        .padding()
+                        .background(Color.clear)
+                        .cornerRadius(5)
+                        .padding(.leading, 5)
+                }
+                .padding(.top, 40)
+                
+                // Полоса под полем ввода
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.black) // Цвет полосы
+                    .padding(.top, 5)
+            }
+            
+            // Поле  ввода пароля
+            VStack {
+                HStack {
+                    Image(systemName: "lock.fill")
+                        .foregroundColor(.black)
+                        .padding(.leading)
+                    
+                    SecureField("Password", text: $password)
+                        .padding()
+                        .background(Color.clear)
+                        .cornerRadius(5)
+                        .padding(.leading, 5)
+                }
+                .padding(.top, 20)
+                
+                // Полоса под полем ввода
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.black)
+                    .padding(.top, 5)
+            }
+            
+            // Кнопка sign in
+            Button(action: {
+            }) {
+                Text("Sign In")
+                    .frame(width: 150, height: 20)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.button)
+                
+                    .cornerRadius(5)
+                    .padding(.top, 40)
+            }
+            
+            // Кнопка guest
+            Button(action: {
+            }) {
+                Text("Guest")
+                    .frame(width: 150, height: 20)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.button)
+                    .cornerRadius(5)
+                    .padding(.top, 20)
+            }
+            
+            Spacer() //чтоб красиво было
+        }
+        .padding()
+        .background(Color.fon) //цвет фона
+        .ignoresSafeArea() //сверху снизу не белый чтоб
+    }
+}
+
+#Preview{
+        ContentView()
+    }
